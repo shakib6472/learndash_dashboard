@@ -1,0 +1,374 @@
+/* --- Global Variables --- */
+:root {
+	--ldp-admin-primary: #4f46e5;
+	--ldp-admin-primary-hover: #4338ca;
+	--ldp-admin-bg: #f9fafb;
+	--ldp-admin-card-bg: #ffffff;
+	--ldp-admin-text: #111827;
+	--ldp-admin-text-muted: #6b7280;
+	--ldp-admin-border: #e5e7eb;
+	--ldp-admin-radius: 8px;
+	--ldp-admin-radius-lg: 12px;
+}
+
+/* --- Base Wrapper --- */
+.ldp-admin-wrap {
+	max-width: 1000px;
+	margin: 20px 20px 20px 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	color: var(--ldp-admin-text);
+}
+
+.ldp-admin-wrap * {
+	box-sizing: border-box;
+}
+
+/* --- Hero Section --- */
+.ldp-admin-hero {
+	background: var(--ldp-admin-card-bg);
+	border: 1px solid var(--ldp-admin-border);
+	border-radius: var(--ldp-admin-radius-lg);
+	padding: 30px;
+	margin-bottom: 30px;
+	box-shadow:
+		0 1px 3px 0 rgba(0, 0, 0, 0.1),
+		0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.ldp-admin-eyebrow {
+	margin: 0 0 5px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--ldp-admin-primary);
+}
+
+.ldp-admin-hero h1 {
+	margin: 0 0 10px;
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--ldp-admin-text);
+}
+
+.ldp-admin-hero p {
+	margin: 0;
+	font-size: 16px;
+	color: var(--ldp-admin-text-muted);
+}
+
+/* --- Tabs Navigation --- */
+.ldp-tabs-nav {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid var(--ldp-admin-border);
+	padding-bottom: 1px;
+}
+
+.ldp-tab-btn {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--ldp-admin-text-muted);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.ldp-tab-btn:hover {
+	color: var(--ldp-admin-text);
+}
+
+.ldp-tab-btn.active {
+	color: var(--ldp-admin-primary);
+	border-bottom-color: var(--ldp-admin-primary);
+}
+
+.ldp-tab-content {
+	display: none;
+}
+
+.ldp-tab-content.active {
+	display: block;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* --- Cards & Layout --- */
+.ldp-admin-card {
+	background: var(--ldp-admin-card-bg);
+	border: 1px solid var(--ldp-admin-border);
+	border-radius: var(--ldp-admin-radius-lg);
+	padding: 24px;
+	margin-bottom: 24px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.ldp-card-head {
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--ldp-admin-border);
+}
+
+.ldp-card-head h2 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.ldp-card-note {
+	margin: 5px 0 0;
+	font-size: 13px;
+	color: var(--ldp-admin-text-muted);
+}
+
+.ldp-field-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+}
+
+/* --- Form Fields --- */
+.ldp-field label,
+.ldp-color-field-group label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+	color: var(--ldp-admin-text);
+	margin-bottom: 8px;
+}
+
+.ldp-field select,
+.ldp-field input[type="url"] {
+	width: 100%;
+	max-width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--ldp-admin-border);
+	border-radius: var(--ldp-admin-radius);
+	background: #fff;
+	font-size: 14px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ldp-field select:focus,
+.ldp-field input:focus {
+	border-color: var(--ldp-admin-primary);
+	outline: none;
+	box-shadow: 0 0 0 1px var(--ldp-admin-primary);
+}
+
+/* --- Color Picker Customization --- */
+/* This forces the native WP Color Picker text box to remain visible */
+.ldp-color-field-group {
+	background: #fdfdfd;
+	border: 1px solid var(--ldp-admin-border);
+	padding: 12px 16px;
+	border-radius: var(--ldp-admin-radius);
+}
+
+.wp-picker-container {
+	display: flex !important;
+	align-items: center;
+	gap: 10px;
+}
+
+.wp-picker-container .wp-color-result.button {
+	margin: 0 !important;
+	border-radius: 4px;
+}
+
+.wp-picker-container .wp-picker-input-wrap {
+	display: flex !important; /* Force visibility */
+	align-items: center;
+}
+
+.wp-picker-container input[type="text"].ldp-color-picker-input {
+	display: block !important; /* Force visibility */
+	width: 140px;
+	padding: 4px 8px;
+	font-family: monospace;
+	font-size: 13px;
+	border: 1px solid var(--ldp-admin-border);
+	border-radius: 4px;
+}
+
+.wp-picker-container .wp-picker-clear {
+	display: none; /* Hide default clear button to keep UI clean */
+}
+
+/* --- Switches (Tailwind Style) --- */
+.ldp-switch {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 16px;
+	border-radius: var(--ldp-admin-radius);
+	border: 1px solid var(--ldp-admin-border);
+	background: var(--ldp-admin-bg);
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.ldp-switch.ldp-full-width {
+	grid-column: 1 / -1;
+	max-width: 100%;
+}
+
+.ldp-switch:hover {
+	background: #f3f4f6;
+}
+
+.ldp-switch input[type="checkbox"] {
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	border: 1px solid #cbd5e1;
+	cursor: pointer;
+}
+
+.ldp-switch input[type="checkbox"]:checked {
+	background-color: var(--ldp-admin-primary);
+	border-color: var(--ldp-admin-primary);
+}
+
+.ldp-switch span {
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--ldp-admin-text);
+}
+
+/* --- Conditional Elements --- */
+.hidden {
+	display: none !important;
+}
+
+.ldp-conditional-options {
+	grid-column: 1 / -1;
+	background: var(--ldp-admin-bg);
+	border: 1px solid var(--ldp-admin-border);
+	border-top: none;
+	padding: 20px;
+	border-bottom-left-radius: var(--ldp-admin-radius);
+	border-bottom-right-radius: var(--ldp-admin-radius);
+	margin-top: -10px; /* Pull up to attach to the switch above */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+/* --- Footer & Submit --- */
+.ldp-admin-footer {
+	padding: 20px 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.ldp-admin-footer .button-primary {
+	background: var(--ldp-admin-primary);
+	border-color: var(--ldp-admin-primary);
+	color: #fff;
+	padding: 6px 24px;
+	font-size: 14px;
+	font-weight: 600;
+	border-radius: 6px;
+	line-height: normal;
+}
+
+.ldp-admin-footer .button-primary:hover {
+	background: var(--ldp-admin-primary-hover);
+	border-color: var(--ldp-admin-primary-hover);
+}
+
+/* --- Media Uploader UI --- */
+.ldp-media-uploader-wrap {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	background: #fdfdfd;
+	border: 1px solid var(--ldp-admin-border);
+	padding: 16px;
+	border-radius: var(--ldp-admin-radius);
+	margin-bottom: 8px;
+}
+
+.ldp-logo-preview {
+	width: 160px;
+	height: 80px;
+	background-color: #f3f4f6;
+	background-image:
+		linear-gradient(45deg, #e5e7eb 25%, transparent 25%, transparent 75%, #e5e7eb 75%, #e5e7eb),
+		linear-gradient(45deg, #e5e7eb 25%, transparent 25%, transparent 75%, #e5e7eb 75%, #e5e7eb);
+	background-size: 20px 20px;
+	background-position:
+		0 0,
+		10px 10px;
+	border: 1px solid var(--ldp-admin-border);
+	border-radius: var(--ldp-admin-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.ldp-logo-preview img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	display: block;
+}
+
+.ldp-media-actions {
+	flex-grow: 1;
+}
+
+input[type="text"].ldp-readonly-input {
+	background-color: #f3f4f6;
+	color: #6b7280;
+	cursor: not-allowed;
+	margin-bottom: 10px;
+}
+
+.ldp-media-btns {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.ldp-media-btns .button-link-delete {
+	color: #dc2626;
+	text-decoration: none;
+}
+
+.ldp-media-btns .button-link-delete:hover {
+	color: #b91c1c;
+}
+
+@media (max-width: 640px) {
+	.ldp-media-uploader-wrap {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.ldp-field.ldp-full-width {
+	grid-column: span 3;
+}
