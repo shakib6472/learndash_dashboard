@@ -325,7 +325,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: ldp-hidden;
+	overflow: hidden;
 	flex-shrink: 0;
 }
 

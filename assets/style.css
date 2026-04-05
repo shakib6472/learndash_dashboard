@@ -460,7 +460,7 @@
 	background: var(--ldp_skb-border-color); 
 	border-radius: 4px;
 	margin-bottom: 6px;
-	overflow: ldp-hidden;
+	overflow: hidden;
 }
 
 .ldp-progress-fill {

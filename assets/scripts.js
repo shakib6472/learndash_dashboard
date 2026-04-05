@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function openSidebar() {
         sidebar.classList.add('active');
         overlay.classList.add('active');
-        document.body.style.overflow = 'ldp-hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     function closeSidebar() {

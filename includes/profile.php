@@ -107,7 +107,7 @@ $current_phone      = get_user_meta( $user_id, 'ldp_phone', true );
     <div class="ldp-card ldp-card-narrow">
         <form class="ldp-form" action="" method="post">
             <?php wp_nonce_field( 'ldp_update_profile_action', 'ldp_profile_nonce' ); ?>
-            <input type="ldp-hidden" name="ldp_action" value="update_profile">
+            <input type="hidden" name="ldp_action" value="update_profile">
             
             <div class="ldp-form-grid">
                 <div class="ldp-form-group">
@@ -136,7 +136,7 @@ $current_phone      = get_user_meta( $user_id, 'ldp_phone', true );
     <div class="ldp-card ldp-card-narrow">
         <form class="ldp-form" action="" method="post">
             <?php wp_nonce_field( 'ldp_update_password_action', 'ldp_password_nonce' ); ?>
-            <input type="ldp-hidden" name="ldp_action" value="update_password">
+            <input type="hidden" name="ldp_action" value="update_password">
             
             <div class="ldp-form-grid">
                 <div class="ldp-form-group ldp-col-span-2">
