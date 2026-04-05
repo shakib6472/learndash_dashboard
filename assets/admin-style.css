@@ -117,7 +117,7 @@
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.mt-20 {
+.ldp-mt-20 {
 	margin-top: 20px;
 }
 
@@ -256,7 +256,7 @@
 }
 
 /* --- Conditional Elements --- */
-.hidden {
+.ldp-hidden {
 	display: none !important;
 }
 
@@ -325,7 +325,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
+	overflow: ldp-hidden;
 	flex-shrink: 0;
 }
 

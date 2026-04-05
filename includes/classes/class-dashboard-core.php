@@ -56,7 +56,7 @@ class LD_Premium_Dashboard_Core
         $font_url = "https://fonts.googleapis.com/css2?family=" . urlencode($font_primary) . ":wght@400;500;600;700&family=" . urlencode($font_secondary) . ":wght@400;500;600;700&display=swap";
 
         wp_enqueue_style('ldp-google-fonts', $font_url, array(), null);
-        wp_enqueue_style('ldp-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), null);
+        
         wp_enqueue_style('ldp-style', LDP_SKB_PLUGIN_URL . 'assets/style.css', array(), LDP_SKB_VERSION);
         wp_enqueue_script('ldp-script', LDP_SKB_PLUGIN_URL . 'assets/scripts.js', array(), LDP_SKB_VERSION, true);
 
@@ -103,12 +103,12 @@ class LD_Premium_Dashboard_Core
         $current_url = get_permalink();
 
         ob_start();
-        echo '<div class="dashboard-wrapper">';
-        echo '<div class="sidebar-overlay" id="overlay"></div>';
+        echo '<div class="ldp-dashboard-wrapper">';
+        echo '<div class="ldp-sidebar-overlay" id="overlay"></div>';
 
         include LDP_SKB_PLUGIN_DIR . 'includes/nav.php';
 
-        echo '<main class="main-content">';
+        echo '<main class="ldp-main-content">';
         include LDP_SKB_PLUGIN_DIR . 'includes/header.php';
 
         $file_path = LDP_SKB_PLUGIN_DIR . "includes/{$active_tab}.php";

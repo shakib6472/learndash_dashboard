@@ -39,5 +39,10 @@ function run_ld_premium_dashboard()
 
 run_ld_premium_dashboard();
 
-// hide admin bar
-add_filter('show_admin_bar', '__return_false');
+// Hide admin bar for non-administrators
+add_action('after_setup_theme', 'ldp_hide_admin_bar_for_students');
+function ldp_hide_admin_bar_for_students() {
+    if (!current_user_can('manage_options') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}

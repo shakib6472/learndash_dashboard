@@ -123,7 +123,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                                     <button type="button" class="button button-secondary"
                                         id="ldp_upload_logo_btn">Select Image</button>
                                     <button type="button"
-                                        class="button button-link-delete <?php echo empty($settings['logo_url']) ? 'hidden' : ''; ?>"
+                                        class="button button-link-delete <?php echo empty($settings['logo_url']) ? 'ldp-hidden' : ''; ?>"
                                         id="ldp_remove_logo_btn">Remove</button>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     </div>
                 </div>
             </section>
-            <section class="ldp-admin-card mt-20">
+            <section class="ldp-admin-card ldp-mt-20">
                 <div class="ldp-card-head">
                     <h2>Tab Visibility</h2>
                     <p class="ldp-card-note">Toggle which sections are available to students.</p>
@@ -170,7 +170,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                 </div>
             </section>
 
-            <section class="ldp-admin-card mt-20">
+            <section class="ldp-admin-card ldp-mt-20">
                 <div class="ldp-card-head">
                     <h2>Unauthorized Access</h2>
                     <p class="ldp-card-note">Choose what happens when a logged-out user tries to view the dashboard.</p>
@@ -188,7 +188,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'page') ? 'hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'page') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_unauth_page">
                         <label>Select Login Page</label>
                         <?php
@@ -201,7 +201,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'url') ? 'hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'url') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_unauth_url">
                         <label for="unauth_redirect_url">Custom Redirect URL</label>
                         <input type="url" id="unauth_redirect_url"
@@ -212,7 +212,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                 </div>
             </section>
 
-            <section class="ldp-admin-card mt-20">
+            <section class="ldp-admin-card ldp-mt-20">
                 <div class="ldp-card-head">
                     <h2>Registration Link</h2>
                     <p class="ldp-card-note">If "Anyone can register" is enabled in WordPress, where should the "Create
@@ -229,7 +229,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'page') ? 'hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'page') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_register_page">
                         <label>Select Registration Page</label>
                         <?php
@@ -242,7 +242,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'url') ? 'hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'url') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_register_url">
                         <label for="register_redirect_url">Custom Registration URL</label>
                         <input type="url" id="register_redirect_url"
@@ -253,7 +253,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                 </div>
             </section>
 
-            <section class="ldp-admin-card mt-20">
+            <section class="ldp-admin-card ldp-mt-20">
                 <div class="ldp-card-head">
                     <h2>Logout Redirection</h2>
                     <p class="ldp-card-note">Redirect users to a specific page or URL after logging out.</p>
@@ -266,7 +266,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     </label>
 
                     <div id="logout_redirect_options"
-                        class="ldp-conditional-options <?php echo empty($settings['logout_redirection']) ? 'hidden' : ''; ?>">
+                        class="ldp-conditional-options <?php echo empty($settings['logout_redirection']) ? 'ldp-hidden' : ''; ?>">
                         <div class="ldp-field">
                             <label>Redirect Type</label>
                             <select id="logout_redirect_type"

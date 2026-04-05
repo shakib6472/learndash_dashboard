@@ -39,13 +39,13 @@ jQuery(document).ready(function ($) {
     const $wrapUnauthUrl = $('#wrap_unauth_url');
 
     $unauthAction.on('change', function () {
-        $wrapUnauthPage.addClass('hidden').hide();
-        $wrapUnauthUrl.addClass('hidden').hide();
+        $wrapUnauthPage.addClass('ldp-hidden').hide();
+        $wrapUnauthUrl.addClass('ldp-hidden').hide();
 
         if ($(this).val() === 'page') {
-            $wrapUnauthPage.removeClass('hidden').slideDown(200);
+            $wrapUnauthPage.removeClass('ldp-hidden').slideDown(200);
         } else if ($(this).val() === 'url') {
-            $wrapUnauthUrl.removeClass('hidden').slideDown(200);
+            $wrapUnauthUrl.removeClass('ldp-hidden').slideDown(200);
         }
     });
 
@@ -55,13 +55,13 @@ jQuery(document).ready(function ($) {
     const $wrapRegisterUrl = $('#wrap_register_url');
 
     $registerLinkType.on('change', function () {
-        $wrapRegisterPage.addClass('hidden').hide();
-        $wrapRegisterUrl.addClass('hidden').hide();
+        $wrapRegisterPage.addClass('ldp-hidden').hide();
+        $wrapRegisterUrl.addClass('ldp-hidden').hide();
 
         if ($(this).val() === 'page') {
-            $wrapRegisterPage.removeClass('hidden').slideDown(200);
+            $wrapRegisterPage.removeClass('ldp-hidden').slideDown(200);
         } else if ($(this).val() === 'url') {
-            $wrapRegisterUrl.removeClass('hidden').slideDown(200);
+            $wrapRegisterUrl.removeClass('ldp-hidden').slideDown(200);
         }
     });
 
@@ -91,14 +91,14 @@ jQuery(document).ready(function ($) {
         mediaUploader.on('select', function () {
             var attachment = mediaUploader.state().get('selection').first().toJSON();
 
-            // Set the hidden input value
+            // Set the ldp-hidden input value
             $('#logo_url').val(attachment.url);
 
             // Update the preview image
             $('#ldp_logo_preview').html('<img src="' + attachment.url + '" alt="Logo Preview" />');
 
             // Show the remove button
-            $('#ldp_remove_logo_btn').removeClass('hidden');
+            $('#ldp_remove_logo_btn').removeClass('ldp-hidden');
         });
 
         // Open the uploader dialog
@@ -139,7 +139,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         $('#logo_url').val(''); // Clear the input
         $('#ldp_logo_preview').html(''); // Clear the preview
-        $(this).addClass('hidden'); // Hide the remove button
+        $(this).addClass('ldp-hidden'); // Hide the remove button
     });
 
 
@@ -147,10 +147,10 @@ jQuery(document).ready(function ($) {
     // Toggle main options wrapper
     $toggleRedirect.on('change', function () {
         if ($(this).is(':checked')) {
-            $redirectOptions.removeClass('hidden').hide().slideDown(200);
+            $redirectOptions.removeClass('ldp-hidden').hide().slideDown(200);
         } else {
             $redirectOptions.slideUp(200, function () {
-                $(this).addClass('hidden');
+                $(this).addClass('ldp-hidden');
             });
         }
     });

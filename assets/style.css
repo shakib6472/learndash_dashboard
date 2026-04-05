@@ -1,5 +1,5 @@
 /* --- LDP General Reset & Layout --- */
-.dashboard-wrapper {
+.ldp-dashboard-wrapper {
 	display: flex;
 	min-height: 100vh;
 	position: relative;
@@ -10,30 +10,30 @@
 	box-sizing: border-box;
 }
 
-.dashboard-wrapper *,
-.dashboard-wrapper *::before,
-.dashboard-wrapper *::after {
+.ldp-dashboard-wrapper *,
+.ldp-dashboard-wrapper *::before,
+.ldp-dashboard-wrapper *::after {
 	box-sizing: inherit;
 }
 
-.dashboard-wrapper h1,
-.dashboard-wrapper h2,
-.dashboard-wrapper h3,
-.dashboard-wrapper h4,
-.dashboard-wrapper h5,
-.dashboard-wrapper h6,
+.ldp-dashboard-wrapper h1,
+.ldp-dashboard-wrapper h2,
+.ldp-dashboard-wrapper h3,
+.ldp-dashboard-wrapper h4,
+.ldp-dashboard-wrapper h5,
+.ldp-dashboard-wrapper h6,
 .ldp-login-prompt h2 {
 	font-family: var(--ldp_skb-font-secondary);
 	color: var(--ldp_skb-heading-text);
 	margin-top: 0;
 }
 
-.dashboard-wrapper a {
+.ldp-dashboard-wrapper a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.dashboard-wrapper p {
+.ldp-dashboard-wrapper p {
 	margin-top: 0;
 	margin: 0;
 }
@@ -65,9 +65,9 @@
 }
 
 /** --- Buttons & Tabs --- */
-.dashboard-wrapper button#ldp-close-btn,
-.dashboard-wrapper button#ldp-menu-btn,
-.dashboard-wrapper .ldp-view-btn {
+.ldp-dashboard-wrapper button#ldp-close-btn,
+.ldp-dashboard-wrapper button#ldp-menu-btn,
+.ldp-dashboard-wrapper .ldp-view-btn {
 	background-color: none !important;
 	background: none !important;
 	border-style: none;
@@ -78,8 +78,8 @@
 	font-weight: 500;
 	line-height: 16px;
 }
-.dashboard-wrapper button#ldp-close-btn svg,
-.dashboard-wrapper button#ldp-menu-btn svg {
+.ldp-dashboard-wrapper button#ldp-close-btn svg,
+.ldp-dashboard-wrapper button#ldp-menu-btn svg {
 	display: none;
 }
 
@@ -147,7 +147,7 @@
 }
 
 /* --- Main Content Area --- */
-.main-content {
+.ldp-main-content {
 	margin-left: 260px;
 	flex-grow: 1;
 	min-height: 100vh;
@@ -460,7 +460,7 @@
 	background: var(--ldp_skb-border-color); 
 	border-radius: 4px;
 	margin-bottom: 6px;
-	overflow: hidden;
+	overflow: ldp-hidden;
 }
 
 .ldp-progress-fill {
@@ -778,7 +778,7 @@
 	padding: 4px;
 }
 
-.sidebar-overlay {
+.ldp-sidebar-overlay {
 	display: none;
 	position: fixed;
 	inset: 0;
@@ -793,8 +793,8 @@
 	.ldp-close-sidebar {
 		display: flex;
 	}
-	.dashboard-wrapper button#ldp-close-btn svg,
-	.dashboard-wrapper button#ldp-menu-btn svg {
+	.ldp-dashboard-wrapper button#ldp-close-btn svg,
+	.ldp-dashboard-wrapper button#ldp-menu-btn svg {
 		display: block;
 	}
 
@@ -805,12 +805,12 @@
 		transform: translateX(0);
 	}
 
-	.main-content {
+	.ldp-main-content {
 		margin-left: 0;
 		width: 100%;
 	}
 
-	.sidebar-overlay.active {
+	.ldp-sidebar-overlay.active {
 		display: block;
 		opacity: 1;
 	}
@@ -846,4 +846,10 @@
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+}
+
+
+.ldp-activity-content a:hover {
+	color: var(--ldp_skb-font-secondary);
+	text-decoration: underline;
 }
