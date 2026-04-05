@@ -8,11 +8,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * These functions can be used across multiple files to avoid code duplication and maintain consistency.
  */
 
-if ( ! function_exists( 'ldp_get_smart_resume_url' ) ) {
+if ( ! function_exists( 'learndash_premium_dashboard_get_smart_resume_url' ) ) {
     /**
      * Get the exact URL of the first incomplete lesson or topic for a LearnDash course.
      */
-    function ldp_get_smart_resume_url( $course_id, $user_id ) {
+    function learndash_premium_dashboard_get_smart_resume_url( $course_id, $user_id ) {
         $course_link = get_permalink( $course_id );
 
         if ( ! function_exists( 'learndash_get_course_lessons_list' ) ) {

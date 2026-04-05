@@ -2,11 +2,11 @@
 if (!defined('ABSPATH'))
     exit;
 
-$colors = get_option('learndash_premium_dashboard_colors', array());
-$fonts = get_option('learndash_premium_dashboard_fonts', array());
-$settings = get_option('learndash_premium_dashboard_settings', array());
+$learndash_premium_dashboard_colors = get_option('learndash_premium_dashboard_colors', array());
+$learndash_premium_dashboard_fonts = get_option('learndash_premium_dashboard_fonts', array());
+$learndash_premium_dashboard_settings = get_option('learndash_premium_dashboard_settings', array());
 
-$available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'Montserrat', 'Lato', 'Rubik');
+$learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'Montserrat', 'Lato', 'Rubik');
 ?>
 
 <div class="wrap ldp-admin-wrap">
@@ -17,7 +17,6 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
             <p>Adjust branding, typography, and tab visibility from one centralized hub.</p>
         </div>
     </div>
-    <!-- Buttons -->
     <form method="post" action="options.php" class="ldp-admin-form">
         <?php settings_fields('ldp_settings_group'); ?>
 
@@ -28,7 +27,6 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
             <button type="button" class="ldp-tab-btn" data-tab="tab-shortcode">Shortcode</button>
             <button type="button" class="ldp-tab-btn" data-tab="tab-instructions">Instructions</button>
         </div>
-        <!-- Colors & Branding -->
         <div id="tab-colors" class="ldp-tab-content active">
             <section class="ldp-admin-card">
                 <div class="ldp-card-head">
@@ -39,7 +37,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
 
                 <div class="ldp-field-grid">
                     <?php
-                    $color_fields = array(
+                    $learndash_premium_dashboard_color_fields = array(
                         'primary' => 'Primary Brand Color (Buttons & Active States)',
                         'primary_hover' => 'Primary Hover Color',
                         'bg_main' => 'Main Dashboard Background',
@@ -56,12 +54,12 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         'sidebar_item_hover_text' => 'Sidebar Menu Item Hover Text',
                     );
 
-                    foreach ($color_fields as $key => $label) {
-                        $value = isset($colors[$key]) ? esc_attr($colors[$key]) : '';
+                    foreach ($learndash_premium_dashboard_color_fields as $learndash_premium_dashboard_key => $learndash_premium_dashboard_label) {
+                        $learndash_premium_dashboard_val = isset($learndash_premium_dashboard_colors[$learndash_premium_dashboard_key]) ? esc_attr($learndash_premium_dashboard_colors[$learndash_premium_dashboard_key]) : '';
                         echo '<div class="ldp-color-field-group">';
-                        echo '<label for="color_' . $key . '">' . esc_html($label) . '</label>';
+                        echo '<label for="color_' . esc_attr($learndash_premium_dashboard_key) . '">' . esc_html($learndash_premium_dashboard_label) . '</label>';
                         echo '<div class="ldp-color-input-wrap">';
-                        echo '<input type="text" id="color_' . $key . '" name="learndash_premium_dashboard_colors[' . $key . ']" value="' . $value . '" class="ldp-color-picker-input" />';
+                        echo '<input type="text" id="color_' . esc_attr($learndash_premium_dashboard_key) . '" name="learndash_premium_dashboard_colors[' . esc_attr($learndash_premium_dashboard_key) . ']" value="' . esc_attr($learndash_premium_dashboard_val) . '" class="ldp-color-picker-input" />';
                         echo '</div>';
                         echo '</div>';
                     }
@@ -70,7 +68,6 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
             </section>
         </div>
 
-        <!-- Typography -->
         <div id="tab-fonts" class="ldp-tab-content">
             <section class="ldp-admin-card">
                 <div class="ldp-card-head">
@@ -81,16 +78,16 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     <div class="ldp-field">
                         <label for="font_primary">Primary Body Font</label>
                         <select id="font_primary" name="learndash_premium_dashboard_fonts[font_primary]">
-                            <?php foreach ($available_fonts as $font): ?>
-                                <option value="<?php echo esc_attr($font); ?>" <?php selected($fonts['font_primary'] ?? 'Inter', $font); ?>><?php echo esc_html($font); ?></option>
+                            <?php foreach ($learndash_premium_dashboard_available_fonts as $learndash_premium_dashboard_font): ?>
+                                <option value="<?php echo esc_attr($learndash_premium_dashboard_font); ?>" <?php selected($learndash_premium_dashboard_fonts['font_primary'] ?? 'Inter', $learndash_premium_dashboard_font); ?>><?php echo esc_html($learndash_premium_dashboard_font); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="ldp-field">
                         <label for="font_secondary">Secondary Heading Font</label>
                         <select id="font_secondary" name="learndash_premium_dashboard_fonts[font_secondary]">
-                            <?php foreach ($available_fonts as $font): ?>
-                                <option value="<?php echo esc_attr($font); ?>" <?php selected($fonts['font_secondary'] ?? 'Outfit', $font); ?>><?php echo esc_html($font); ?></option>
+                            <?php foreach ($learndash_premium_dashboard_available_fonts as $learndash_premium_dashboard_font): ?>
+                                <option value="<?php echo esc_attr($learndash_premium_dashboard_font); ?>" <?php selected($learndash_premium_dashboard_fonts['font_secondary'] ?? 'Outfit', $learndash_premium_dashboard_font); ?>><?php echo esc_html($learndash_premium_dashboard_font); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -98,7 +95,6 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
             </section>
         </div>
 
-        <!-- Advanced Settings -->
         <div id="tab-advanced" class="ldp-tab-content">
             <section class="ldp-admin-card">
                 <div class="ldp-card-head">
@@ -111,19 +107,19 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         <label>Logo Image</label>
                         <div class="ldp-media-uploader-wrap">
                             <div class="ldp-logo-preview" id="ldp_logo_preview">
-                                <?php if (!empty($settings['logo_url'])): ?>
-                                    <img src="<?php echo esc_url($settings['logo_url']); ?>" alt="Logo Preview" />
+                                <?php if (!empty($learndash_premium_dashboard_settings['logo_url'])): ?>
+                                    <img src="<?php echo esc_url($learndash_premium_dashboard_settings['logo_url']); ?>" alt="Logo Preview" />
                                 <?php endif; ?>
                             </div>
                             <div class="ldp-media-actions">
                                 <input type="text" id="logo_url" name="learndash_premium_dashboard_settings[logo_url]"
-                                    value="<?php echo esc_attr($settings['logo_url'] ?? ''); ?>"
+                                    value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_url'] ?? ''); ?>"
                                     class="ldp-readonly-input" readonly placeholder="No image selected" />
                                 <div class="ldp-media-btns">
                                     <button type="button" class="button button-secondary"
                                         id="ldp_upload_logo_btn">Select Image</button>
                                     <button type="button"
-                                        class="button button-link-delete <?php echo empty($settings['logo_url']) ? 'ldp-hidden' : ''; ?>"
+                                        class="button button-link-delete <?php echo empty($learndash_premium_dashboard_settings['logo_url']) ? 'ldp-hidden' : ''; ?>"
                                         id="ldp_remove_logo_btn">Remove</button>
                                 </div>
                             </div>
@@ -134,7 +130,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     <div class="ldp-field">
                         <label for="logo_width">Logo Width</label>
                         <input type="text" id="logo_width" name="learndash_premium_dashboard_settings[logo_width]"
-                            value="<?php echo esc_attr($settings['logo_width'] ?? '150'); ?>"
+                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_width'] ?? '150'); ?>"
                             placeholder="e.g. 150 or 100%" />
                         <p class="description">Enter numeric value (px) or percentage.</p>
                     </div>
@@ -142,7 +138,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     <div class="ldp-field">
                         <label for="logo_height">Logo Height</label>
                         <input type="text" id="logo_height" name="learndash_premium_dashboard_settings[logo_height]"
-                            value="<?php echo esc_attr($settings['logo_height'] ?? 'auto'); ?>"
+                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_height'] ?? 'auto'); ?>"
                             placeholder="e.g. 40 or auto" />
                         <p class="description">Usually best left as "auto" to maintain aspect ratio.</p>
                     </div>
@@ -155,16 +151,16 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                 </div>
                 <div class="ldp-field-grid">
                     <label class="ldp-switch">
-                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_courses]" value="1" <?php checked($settings['show_courses'] ?? '0', '1'); ?>>
+                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_courses]" value="1" <?php checked($learndash_premium_dashboard_settings['show_courses'] ?? '0', '1'); ?>>
                         <span>Show My Courses Tab</span>
                     </label>
                     <label class="ldp-switch">
                         <input type="checkbox" name="learndash_premium_dashboard_settings[show_certificates]" value="1"
-                            <?php checked($settings['show_certificates'] ?? '0', '1'); ?>>
+                            <?php checked($learndash_premium_dashboard_settings['show_certificates'] ?? '0', '1'); ?>>
                         <span>Show Certificates Tab</span>
                     </label>
                     <label class="ldp-switch">
-                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_profile]" value="1" <?php checked($settings['show_profile'] ?? '0', '1'); ?>>
+                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_profile]" value="1" <?php checked($learndash_premium_dashboard_settings['show_profile'] ?? '0', '1'); ?>>
                         <span>Show Profile Settings Tab</span>
                     </label>
                 </div>
@@ -179,16 +175,16 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     <div class="ldp-field ldp-full-width">
                         <label for="unauth_action">Action for Logged-Out Users</label>
                         <select id="unauth_action" name="learndash_premium_dashboard_settings[unauth_action]">
-                            <option value="form" <?php selected($settings['unauth_action'] ?? 'form', 'form'); ?>>Show
+                            <option value="form" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'form'); ?>>Show
                                 Login Form in Dashboard</option>
-                            <option value="page" <?php selected($settings['unauth_action'] ?? 'form', 'page'); ?>>
+                            <option value="page" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'page'); ?>>
                                 Select a Page</option>
-                            <option value="url" <?php selected($settings['unauth_action'] ?? 'form', 'url'); ?>>
+                            <option value="url" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'url'); ?>>
                                 Redirect to Custom URL</option>
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'page') ? 'ldp-hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['unauth_action'] ?? 'form') !== 'page') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_unauth_page">
                         <label>Select Login Page</label>
                         <?php
@@ -196,17 +192,17 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                             'name' => 'learndash_premium_dashboard_settings[unauth_redirect_page]',
                             'show_option_none' => '-- Select a Page --',
                             'option_none_value' => '',
-                            'selected' => $settings['unauth_redirect_page'] ?? ''
+                            'selected' => $learndash_premium_dashboard_settings['unauth_redirect_page'] ?? ''
                         ));
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['unauth_action'] ?? 'form') !== 'url') ? 'ldp-hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['unauth_action'] ?? 'form') !== 'url') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_unauth_url">
                         <label for="unauth_redirect_url">Custom Redirect URL</label>
                         <input type="url" id="unauth_redirect_url"
                             name="learndash_premium_dashboard_settings[unauth_redirect_url]"
-                            value="<?php echo esc_attr($settings['unauth_redirect_url'] ?? ''); ?>"
+                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['unauth_redirect_url'] ?? ''); ?>"
                             placeholder="https://yoursite.com/login" />
                     </div>
                 </div>
@@ -222,14 +218,14 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     <div class="ldp-field ldp-full-width">
                         <label for="register_link_type">Registration Page Location</label>
                         <select id="register_link_type" name="learndash_premium_dashboard_settings[register_link_type]">
-                            <option value="default" <?php selected($settings['register_link_type'] ?? 'default', 'default'); ?>>Default WP Registration Page</option>
-                            <option value="page" <?php selected($settings['register_link_type'] ?? 'default', 'page'); ?>>Select a Page</option>
-                            <option value="url" <?php selected($settings['register_link_type'] ?? 'default', 'url'); ?>>
+                            <option value="default" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'default'); ?>>Default WP Registration Page</option>
+                            <option value="page" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'page'); ?>>Select a Page</option>
+                            <option value="url" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'url'); ?>>
                                 Custom URL</option>
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'page') ? 'ldp-hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['register_link_type'] ?? 'default') !== 'page') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_register_page">
                         <label>Select Registration Page</label>
                         <?php
@@ -237,17 +233,17 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                             'name' => 'learndash_premium_dashboard_settings[register_redirect_page]',
                             'show_option_none' => '-- Select a Page --',
                             'option_none_value' => '',
-                            'selected' => $settings['register_redirect_page'] ?? ''
+                            'selected' => $learndash_premium_dashboard_settings['register_redirect_page'] ?? ''
                         ));
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($settings['register_link_type'] ?? 'default') !== 'url') ? 'ldp-hidden' : ''; ?>"
+                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['register_link_type'] ?? 'default') !== 'url') ? 'ldp-hidden' : ''; ?>"
                         id="wrap_register_url">
                         <label for="register_redirect_url">Custom Registration URL</label>
                         <input type="url" id="register_redirect_url"
                             name="learndash_premium_dashboard_settings[register_redirect_url]"
-                            value="<?php echo esc_attr($settings['register_redirect_url'] ?? ''); ?>"
+                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['register_redirect_url'] ?? ''); ?>"
                             placeholder="https://yoursite.com/register" />
                     </div>
                 </div>
@@ -261,18 +257,18 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                 <div class="ldp-field-grid">
                     <label class="ldp-switch ldp-full-width">
                         <input type="checkbox" id="toggle_logout_redirect"
-                            name="learndash_premium_dashboard_settings[logout_redirection]" value="1" <?php checked($settings['logout_redirection'] ?? '0', '1'); ?>>
+                            name="learndash_premium_dashboard_settings[logout_redirection]" value="1" <?php checked($learndash_premium_dashboard_settings['logout_redirection'] ?? '0', '1'); ?>>
                         <span>Enable Logout Redirection</span>
                     </label>
 
                     <div id="logout_redirect_options"
-                        class="ldp-conditional-options <?php echo empty($settings['logout_redirection']) ? 'ldp-hidden' : ''; ?>">
+                        class="ldp-conditional-options <?php echo empty($learndash_premium_dashboard_settings['logout_redirection']) ? 'ldp-hidden' : ''; ?>">
                         <div class="ldp-field">
                             <label>Redirect Type</label>
                             <select id="logout_redirect_type"
                                 name="learndash_premium_dashboard_settings[logout_redirect_type]">
-                                <option value="page" <?php selected($settings['logout_redirect_type'] ?? 'page', 'page'); ?>>Select an existing page</option>
-                                <option value="url" <?php selected($settings['logout_redirect_type'] ?? 'page', 'url'); ?>>Custom URL</option>
+                                <option value="page" <?php selected($learndash_premium_dashboard_settings['logout_redirect_type'] ?? 'page', 'page'); ?>>Select an existing page</option>
+                                <option value="url" <?php selected($learndash_premium_dashboard_settings['logout_redirect_type'] ?? 'page', 'url'); ?>>Custom URL</option>
                             </select>
                         </div>
 
@@ -283,7 +279,7 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                                 'name' => 'learndash_premium_dashboard_settings[logout_redirect_page]',
                                 'show_option_none' => '-- Select a Page --',
                                 'option_none_value' => '',
-                                'selected' => $settings['logout_redirect_page'] ?? ''
+                                'selected' => $learndash_premium_dashboard_settings['logout_redirect_page'] ?? ''
                             ));
                             ?>
                         </div>
@@ -291,14 +287,13 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                         <div class="ldp-field" id="wrap_redirect_url">
                             <label>Custom URL</label>
                             <input type="url" name="learndash_premium_dashboard_settings[logout_redirect_url]"
-                                value="<?php echo esc_attr($settings['logout_redirect_url'] ?? ''); ?>"
+                                value="<?php echo esc_attr($learndash_premium_dashboard_settings['logout_redirect_url'] ?? ''); ?>"
                                 placeholder="https://..." />
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <!-- Shortcode -->
         <div id="tab-shortcode" class="ldp-tab-content">
             <section class="ldp-admin-card">
                 <div class="ldp-card-head">
@@ -322,8 +317,6 @@ $available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'M
                     Shortcode copied to clipboard!</p>
             </section>
         </div>
-
-        <!-- Instructions -->
 
         <div id="tab-instructions" class="ldp-tab-content">
             <section class="ldp-admin-card">
