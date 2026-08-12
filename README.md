@@ -1,10 +1,10 @@
-# LearnDash Premium Dashboard
+# Kibworks Student Dashboard for LearnDash
 
-A premium, modern, and highly customizable frontend dashboard plugin for LearnDash LMS. Designed to enhance the student experience, it provides a distraction-free environment for course management, profile updates, and certificate downloads.
+A modern, highly customizable front-end dashboard plugin for LearnDash LMS. Designed to enhance the student experience, it provides a distraction-free environment for course management, profile updates, and certificate downloads.
 
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Requires PHP:** 7.2 or higher  
-**Requires WP:** 5.2 or higher  
+**Requires WP:** 6.0 or higher  
 **Author:** Shakib Shown  
 
 ## Features
@@ -24,16 +24,16 @@ A premium, modern, and highly customizable frontend dashboard plugin for LearnDa
 
 1. Ensure that **LearnDash LMS** is installed and activated on your WordPress site.
 2. Download the plugin folder or zip file.
-3. Upload the `learndash_premium_dashboard` folder to the `/wp-content/plugins/` directory, or upload the zip file via the **Plugins > Add New** menu in WordPress.
+3. Upload the `kibworks-student-dashboard-for-learndash` folder to the `/wp-content/plugins/` directory, or upload the zip file via the **Plugins > Add New** menu in WordPress.
 4. Activate the plugin through the 'Plugins' menu in WordPress.
 
 ## Usage
 
 1. Create a new page in WordPress (e.g., "Dashboard" or "Student Portal").
 2. Add the following shortcode to the page content:
-   `[learndash_premium_dashboard]`
+   `[kibworks_student_dashboard]`
 3. Publish the page.
-4. Navigate to **LearnDash LMS > Dashboard Modify** in the WordPress admin menu to configure your branding, tab visibility, and redirection settings.
+4. Navigate to **LearnDash LMS > Student Dashboard** in the WordPress admin menu to configure your branding, tab visibility, and redirection settings.
 
 ## Admin Settings Overview
 
@@ -57,3 +57,6 @@ The plugin adds a new settings panel under the LearnDash LMS menu with three mai
 ## Support
 
 For issues, feature requests, or custom development inquiries, please contact shakib6472@hotmail.com or visit https://github.com/shakib6472/
+## Trademark notice
+
+This is an independent add-on. LearnDash is a trademark of Liquid Web, LLC. This plugin is not affiliated with, endorsed by, or sponsored by them.

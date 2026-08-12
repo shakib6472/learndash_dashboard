@@ -1,12 +1,12 @@
 jQuery(document).ready(function ($) {
 
     // 1. Tab Switching Logic
-    $('.ldp-tab-btn').on('click', function (e) {
+    $('.kbw-sd-tab-btn').on('click', function (e) {
         e.preventDefault();
 
         // Remove active class from all buttons and content
-        $('.ldp-tab-btn').removeClass('active');
-        $('.ldp-tab-content').removeClass('active');
+        $('.kbw-sd-tab-btn').removeClass('active');
+        $('.kbw-sd-tab-content').removeClass('active');
 
         // Add active class to clicked button and target content
         $(this).addClass('active');
@@ -15,8 +15,8 @@ jQuery(document).ready(function ($) {
 
     // 2. Initialize WP Color Picker
     // We initialize it, but our CSS will force the text input to remain visible
-    if ($('.ldp-color-picker-input').length) {
-        $('.ldp-color-picker-input').wpColorPicker({
+    if ($('.kbw-sd-color-picker-input').length) {
+        $('.kbw-sd-color-picker-input').wpColorPicker({
             // The default WP color picker doesn't natively support RGBA visual picking, 
             // but by keeping the text field visible, users can paste RGBA codes directly.
             change: function (event, ui) {
@@ -39,13 +39,13 @@ jQuery(document).ready(function ($) {
     const $wrapUnauthUrl = $('#wrap_unauth_url');
 
     $unauthAction.on('change', function () {
-        $wrapUnauthPage.addClass('ldp-hidden').hide();
-        $wrapUnauthUrl.addClass('ldp-hidden').hide();
+        $wrapUnauthPage.addClass('kbw-sd-hidden').hide();
+        $wrapUnauthUrl.addClass('kbw-sd-hidden').hide();
 
         if ($(this).val() === 'page') {
-            $wrapUnauthPage.removeClass('ldp-hidden').slideDown(200);
+            $wrapUnauthPage.removeClass('kbw-sd-hidden').slideDown(200);
         } else if ($(this).val() === 'url') {
-            $wrapUnauthUrl.removeClass('ldp-hidden').slideDown(200);
+            $wrapUnauthUrl.removeClass('kbw-sd-hidden').slideDown(200);
         }
     });
 
@@ -55,13 +55,13 @@ jQuery(document).ready(function ($) {
     const $wrapRegisterUrl = $('#wrap_register_url');
 
     $registerLinkType.on('change', function () {
-        $wrapRegisterPage.addClass('ldp-hidden').hide();
-        $wrapRegisterUrl.addClass('ldp-hidden').hide();
+        $wrapRegisterPage.addClass('kbw-sd-hidden').hide();
+        $wrapRegisterUrl.addClass('kbw-sd-hidden').hide();
 
         if ($(this).val() === 'page') {
-            $wrapRegisterPage.removeClass('ldp-hidden').slideDown(200);
+            $wrapRegisterPage.removeClass('kbw-sd-hidden').slideDown(200);
         } else if ($(this).val() === 'url') {
-            $wrapRegisterUrl.removeClass('ldp-hidden').slideDown(200);
+            $wrapRegisterUrl.removeClass('kbw-sd-hidden').slideDown(200);
         }
     });
 
@@ -69,7 +69,7 @@ jQuery(document).ready(function ($) {
     // 6. Media Uploader for Brand Logo
     var mediaUploader;
 
-    $('#ldp_upload_logo_btn').on('click', function (e) {
+    $('#kbw_sd_upload_logo_btn').on('click', function (e) {
         e.preventDefault();
 
         // If the uploader object has already been created, reopen the dialog
@@ -91,14 +91,14 @@ jQuery(document).ready(function ($) {
         mediaUploader.on('select', function () {
             var attachment = mediaUploader.state().get('selection').first().toJSON();
 
-            // Set the ldp-hidden input value
+            // Set the kbw-sd-hidden input value
             $('#logo_url').val(attachment.url);
 
             // Update the preview image
-            $('#ldp_logo_preview').html('<img src="' + attachment.url + '" alt="Logo Preview" />');
+            $('#kbw_sd_logo_preview').html('<img src="' + attachment.url + '" alt="Logo Preview" />');
 
             // Show the remove button
-            $('#ldp_remove_logo_btn').removeClass('ldp-hidden');
+            $('#kbw_sd_remove_logo_btn').removeClass('kbw-sd-hidden');
         });
 
         // Open the uploader dialog
@@ -106,9 +106,9 @@ jQuery(document).ready(function ($) {
     });
 
     // 7. Copy Shortcode Logic
-    const copyBtn = document.getElementById('ldp_copy_shortcode_btn');
-    const copyText = document.getElementById('ldp_shortcode_text');
-    const copySuccess = document.getElementById('ldp_copy_success');
+    const copyBtn = document.getElementById('kbw_sd_copy_shortcode_btn');
+    const copyText = document.getElementById('kbw_sd_shortcode_text');
+    const copySuccess = document.getElementById('kbw_sd_copy_success');
 
     if (copyBtn && copyText) {
         copyBtn.addEventListener('click', function () {
@@ -135,11 +135,11 @@ jQuery(document).ready(function ($) {
 
 
     // Remove Logo Button
-    $('#ldp_remove_logo_btn').on('click', function (e) {
+    $('#kbw_sd_remove_logo_btn').on('click', function (e) {
         e.preventDefault();
         $('#logo_url').val(''); // Clear the input
-        $('#ldp_logo_preview').html(''); // Clear the preview
-        $(this).addClass('ldp-hidden'); // Hide the remove button
+        $('#kbw_sd_logo_preview').html(''); // Clear the preview
+        $(this).addClass('kbw-sd-hidden'); // Hide the remove button
     });
 
 
@@ -147,10 +147,10 @@ jQuery(document).ready(function ($) {
     // Toggle main options wrapper
     $toggleRedirect.on('change', function () {
         if ($(this).is(':checked')) {
-            $redirectOptions.removeClass('ldp-hidden').hide().slideDown(200);
+            $redirectOptions.removeClass('kbw-sd-hidden').hide().slideDown(200);
         } else {
             $redirectOptions.slideUp(200, function () {
-                $(this).addClass('ldp-hidden');
+                $(this).addClass('kbw-sd-hidden');
             });
         }
     });

@@ -1,43 +1,44 @@
-﻿<?php
-if (!defined('ABSPATH'))
+<?php
+if (!defined('ABSPATH')) {
     exit;
+}
 
-$learndash_premium_dashboard_colors = get_option('learndash_premium_dashboard_colors', array());
-$learndash_premium_dashboard_fonts = get_option('learndash_premium_dashboard_fonts', array());
-$learndash_premium_dashboard_settings = get_option('learndash_premium_dashboard_settings', array());
+$kbw_sd_colors = get_option('kbw_sd_colors', array());
+$kbw_sd_fonts = get_option('kbw_sd_fonts', array());
+$kbw_sd_settings = get_option('kbw_sd_settings', array());
 
-$learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'Montserrat', 'Lato', 'Rubik');
+$kbw_sd_available_fonts = array('Inter', 'Outfit', 'Poppins', 'Roboto', 'Open Sans', 'Montserrat', 'Lato', 'Rubik');
 ?>
 
-<div class="wrap ldp-admin-wrap">
-    <div class="ldp-admin-hero">
+<div class="wrap kbw-sd-admin-wrap">
+    <div class="kbw-sd-admin-hero">
         <div>
-            <p class="ldp-admin-eyebrow">LearnDash Premium Dashboard</p>
+            <p class="kbw-sd-admin-eyebrow">LearnDash Premium Dashboard</p>
             <h1>Dashboard Settings</h1>
             <p>Adjust branding, typography, and tab visibility from one centralized hub.</p>
         </div>
     </div>
-    <form method="post" action="options.php" class="ldp-admin-form">
-        <?php settings_fields('ldp_settings_group'); ?>
+    <form method="post" action="options.php" class="kbw-sd-admin-form">
+        <?php settings_fields('kbw_sd_settings_group'); ?>
 
-        <div class="ldp-tabs-nav">
-            <button type="button" class="ldp-tab-btn active" data-tab="tab-colors">Colors & Branding</button>
-            <button type="button" class="ldp-tab-btn" data-tab="tab-fonts">Typography</button>
-            <button type="button" class="ldp-tab-btn" data-tab="tab-advanced">Advanced Settings</button>
-            <button type="button" class="ldp-tab-btn" data-tab="tab-shortcode">Shortcode</button>
-            <button type="button" class="ldp-tab-btn" data-tab="tab-instructions">Instructions</button>
+        <div class="kbw-sd-tabs-nav">
+            <button type="button" class="kbw-sd-tab-btn active" data-tab="tab-colors">Colors & Branding</button>
+            <button type="button" class="kbw-sd-tab-btn" data-tab="tab-fonts">Typography</button>
+            <button type="button" class="kbw-sd-tab-btn" data-tab="tab-advanced">Advanced Settings</button>
+            <button type="button" class="kbw-sd-tab-btn" data-tab="tab-shortcode">Shortcode</button>
+            <button type="button" class="kbw-sd-tab-btn" data-tab="tab-instructions">Instructions</button>
         </div>
-        <div id="tab-colors" class="ldp-tab-content active">
-            <section class="ldp-admin-card">
-                <div class="ldp-card-head">
+        <div id="tab-colors" class="kbw-sd-tab-content active">
+            <section class="kbw-sd-admin-card">
+                <div class="kbw-sd-card-head">
                     <h2>Color Palette</h2>
-                    <p class="ldp-card-note">Select your brand colors. The hex value is displayed next to the picker so
+                    <p class="kbw-sd-card-note">Select your brand colors. The hex value is displayed next to the picker so
                         you can type or paste transparency codes (e.g. rgba(0,0,0,0.5)) manually if needed.</p>
                 </div>
 
-                <div class="ldp-field-grid">
+                <div class="kbw-sd-field-grid">
                     <?php
-                    $learndash_premium_dashboard_color_fields = array(
+                    $kbw_sd_color_fields = array(
                         'primary' => 'Primary Brand Color (Buttons & Active States)',
                         'primary_hover' => 'Primary Hover Color',
                         'bg_main' => 'Main Dashboard Background',
@@ -54,12 +55,12 @@ $learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins
                         'sidebar_item_hover_text' => 'Sidebar Menu Item Hover Text',
                     );
 
-                    foreach ($learndash_premium_dashboard_color_fields as $learndash_premium_dashboard_key => $learndash_premium_dashboard_label) {
-                        $learndash_premium_dashboard_val = isset($learndash_premium_dashboard_colors[$learndash_premium_dashboard_key]) ? esc_attr($learndash_premium_dashboard_colors[$learndash_premium_dashboard_key]) : '';
-                        echo '<div class="ldp-color-field-group">';
-                        echo '<label for="color_' . esc_attr($learndash_premium_dashboard_key) . '">' . esc_html($learndash_premium_dashboard_label) . '</label>';
-                        echo '<div class="ldp-color-input-wrap">';
-                        echo '<input type="text" id="color_' . esc_attr($learndash_premium_dashboard_key) . '" name="learndash_premium_dashboard_colors[' . esc_attr($learndash_premium_dashboard_key) . ']" value="' . esc_attr($learndash_premium_dashboard_val) . '" class="ldp-color-picker-input" />';
+                    foreach ($kbw_sd_color_fields as $kbw_sd_key => $kbw_sd_label) {
+                        $kbw_sd_val = isset($kbw_sd_colors[$kbw_sd_key]) ? esc_attr($kbw_sd_colors[$kbw_sd_key]) : '';
+                        echo '<div class="kbw-sd-color-field-group">';
+                        echo '<label for="color_' . esc_attr($kbw_sd_key) . '">' . esc_html($kbw_sd_label) . '</label>';
+                        echo '<div class="kbw-sd-color-input-wrap">';
+                        echo '<input type="text" id="color_' . esc_attr($kbw_sd_key) . '" name="kbw_sd_colors[' . esc_attr($kbw_sd_key) . ']" value="' . esc_attr($kbw_sd_val) . '" class="kbw-sd-color-picker-input" />';
                         echo '</div>';
                         echo '</div>';
                     }
@@ -68,26 +69,26 @@ $learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins
             </section>
         </div>
 
-        <div id="tab-fonts" class="ldp-tab-content">
-            <section class="ldp-admin-card">
-                <div class="ldp-card-head">
+        <div id="tab-fonts" class="kbw-sd-tab-content">
+            <section class="kbw-sd-admin-card">
+                <div class="kbw-sd-card-head">
                     <h2>Typography Settings</h2>
-                    <p class="ldp-card-note">Select the Google Fonts to load for the dashboard.</p>
+                    <p class="kbw-sd-card-note">Select the Google Fonts to load for the dashboard.</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <div class="ldp-field">
+                <div class="kbw-sd-field-grid">
+                    <div class="kbw-sd-field">
                         <label for="font_primary">Primary Body Font</label>
-                        <select id="font_primary" name="learndash_premium_dashboard_fonts[font_primary]">
-                            <?php foreach ($learndash_premium_dashboard_available_fonts as $learndash_premium_dashboard_font): ?>
-                                <option value="<?php echo esc_attr($learndash_premium_dashboard_font); ?>" <?php selected($learndash_premium_dashboard_fonts['font_primary'] ?? 'Inter', $learndash_premium_dashboard_font); ?>><?php echo esc_html($learndash_premium_dashboard_font); ?></option>
+                        <select id="font_primary" name="kbw_sd_fonts[font_primary]">
+                            <?php foreach ($kbw_sd_available_fonts as $kbw_sd_font): ?>
+                                <option value="<?php echo esc_attr($kbw_sd_font); ?>" <?php selected($kbw_sd_fonts['font_primary'] ?? 'Inter', $kbw_sd_font); ?>><?php echo esc_html($kbw_sd_font); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="ldp-field">
+                    <div class="kbw-sd-field">
                         <label for="font_secondary">Secondary Heading Font</label>
-                        <select id="font_secondary" name="learndash_premium_dashboard_fonts[font_secondary]">
-                            <?php foreach ($learndash_premium_dashboard_available_fonts as $learndash_premium_dashboard_font): ?>
-                                <option value="<?php echo esc_attr($learndash_premium_dashboard_font); ?>" <?php selected($learndash_premium_dashboard_fonts['font_secondary'] ?? 'Outfit', $learndash_premium_dashboard_font); ?>><?php echo esc_html($learndash_premium_dashboard_font); ?></option>
+                        <select id="font_secondary" name="kbw_sd_fonts[font_secondary]">
+                            <?php foreach ($kbw_sd_available_fonts as $kbw_sd_font): ?>
+                                <option value="<?php echo esc_attr($kbw_sd_font); ?>" <?php selected($kbw_sd_fonts['font_secondary'] ?? 'Outfit', $kbw_sd_font); ?>><?php echo esc_html($kbw_sd_font); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -95,241 +96,241 @@ $learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins
             </section>
         </div>
 
-        <div id="tab-advanced" class="ldp-tab-content">
-            <section class="ldp-admin-card">
-                <div class="ldp-card-head">
+        <div id="tab-advanced" class="kbw-sd-tab-content">
+            <section class="kbw-sd-admin-card">
+                <div class="kbw-sd-card-head">
                     <h2>Brand Logo</h2>
-                    <p class="ldp-card-note">Upload or link your dashboard logo. Recommended size: <strong>160x40
+                    <p class="kbw-sd-card-note">Upload or link your dashboard logo. Recommended size: <strong>160x40
                             pixels</strong>.</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <div class="ldp-field ldp-full-width">
+                <div class="kbw-sd-field-grid">
+                    <div class="kbw-sd-field kbw-sd-full-width">
                         <label>Logo Image</label>
-                        <div class="ldp-media-uploader-wrap">
-                            <div class="ldp-logo-preview" id="ldp_logo_preview">
-                                <?php if (!empty($learndash_premium_dashboard_settings['logo_url'])): ?>
-                                    <img src="<?php echo esc_url($learndash_premium_dashboard_settings['logo_url']); ?>" alt="Logo Preview" />
+                        <div class="kbw-sd-media-uploader-wrap">
+                            <div class="kbw-sd-logo-preview" id="kbw_sd_logo_preview">
+                                <?php if (!empty($kbw_sd_settings['logo_url'])): ?>
+                                    <img src="<?php echo esc_url($kbw_sd_settings['logo_url']); ?>" alt="Logo Preview" />
                                 <?php endif; ?>
                             </div>
-                            <div class="ldp-media-actions">
-                                <input type="text" id="logo_url" name="learndash_premium_dashboard_settings[logo_url]"
-                                    value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_url'] ?? ''); ?>"
-                                    class="ldp-readonly-input" readonly placeholder="No image selected" />
-                                <div class="ldp-media-btns">
+                            <div class="kbw-sd-media-actions">
+                                <input type="text" id="logo_url" name="kbw_sd_settings[logo_url]"
+                                    value="<?php echo esc_attr($kbw_sd_settings['logo_url'] ?? ''); ?>"
+                                    class="kbw-sd-readonly-input" readonly placeholder="No image selected" />
+                                <div class="kbw-sd-media-btns">
                                     <button type="button" class="button button-secondary"
-                                        id="ldp_upload_logo_btn">Select Image</button>
+                                        id="kbw_sd_upload_logo_btn">Select Image</button>
                                     <button type="button"
-                                        class="button button-link-delete <?php echo empty($learndash_premium_dashboard_settings['logo_url']) ? 'ldp-hidden' : ''; ?>"
-                                        id="ldp_remove_logo_btn">Remove</button>
+                                        class="button button-link-delete <?php echo esc_attr( empty($kbw_sd_settings['logo_url']) ? 'kbw-sd-hidden' : '' ); ?>"
+                                        id="kbw_sd_remove_logo_btn">Remove</button>
                                 </div>
                             </div>
                         </div>
                         <p class="description">Select your logo from the WordPress Media Library.</p>
                     </div>
 
-                    <div class="ldp-field">
+                    <div class="kbw-sd-field">
                         <label for="logo_width">Logo Width</label>
-                        <input type="text" id="logo_width" name="learndash_premium_dashboard_settings[logo_width]"
-                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_width'] ?? '150'); ?>"
+                        <input type="text" id="logo_width" name="kbw_sd_settings[logo_width]"
+                            value="<?php echo esc_attr($kbw_sd_settings['logo_width'] ?? '150'); ?>"
                             placeholder="e.g. 150 or 100%" />
                         <p class="description">Enter numeric value (px) or percentage.</p>
                     </div>
 
-                    <div class="ldp-field">
+                    <div class="kbw-sd-field">
                         <label for="logo_height">Logo Height</label>
-                        <input type="text" id="logo_height" name="learndash_premium_dashboard_settings[logo_height]"
-                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['logo_height'] ?? 'auto'); ?>"
+                        <input type="text" id="logo_height" name="kbw_sd_settings[logo_height]"
+                            value="<?php echo esc_attr($kbw_sd_settings['logo_height'] ?? 'auto'); ?>"
                             placeholder="e.g. 40 or auto" />
                         <p class="description">Usually best left as "auto" to maintain aspect ratio.</p>
                     </div>
                 </div>
             </section>
-            <section class="ldp-admin-card ldp-mt-20">
-                <div class="ldp-card-head">
+            <section class="kbw-sd-admin-card kbw-sd-mt-20">
+                <div class="kbw-sd-card-head">
                     <h2>Tab Visibility</h2>
-                    <p class="ldp-card-note">Toggle which sections are available to students.</p>
+                    <p class="kbw-sd-card-note">Toggle which sections are available to students.</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <label class="ldp-switch">
-                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_courses]" value="1" <?php checked($learndash_premium_dashboard_settings['show_courses'] ?? '0', '1'); ?>>
+                <div class="kbw-sd-field-grid">
+                    <label class="kbw-sd-switch">
+                        <input type="checkbox" name="kbw_sd_settings[show_courses]" value="1" <?php checked($kbw_sd_settings['show_courses'] ?? '0', '1'); ?>>
                         <span>Show My Courses Tab</span>
                     </label>
-                    <label class="ldp-switch">
-                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_certificates]" value="1"
-                            <?php checked($learndash_premium_dashboard_settings['show_certificates'] ?? '0', '1'); ?>>
+                    <label class="kbw-sd-switch">
+                        <input type="checkbox" name="kbw_sd_settings[show_certificates]" value="1"
+                            <?php checked($kbw_sd_settings['show_certificates'] ?? '0', '1'); ?>>
                         <span>Show Certificates Tab</span>
                     </label>
-                    <label class="ldp-switch">
-                        <input type="checkbox" name="learndash_premium_dashboard_settings[show_profile]" value="1" <?php checked($learndash_premium_dashboard_settings['show_profile'] ?? '0', '1'); ?>>
+                    <label class="kbw-sd-switch">
+                        <input type="checkbox" name="kbw_sd_settings[show_profile]" value="1" <?php checked($kbw_sd_settings['show_profile'] ?? '0', '1'); ?>>
                         <span>Show Profile Settings Tab</span>
                     </label>
                 </div>
             </section>
 
-            <section class="ldp-admin-card ldp-mt-20">
-                <div class="ldp-card-head">
+            <section class="kbw-sd-admin-card kbw-sd-mt-20">
+                <div class="kbw-sd-card-head">
                     <h2>Unauthorized Access</h2>
-                    <p class="ldp-card-note">Choose what happens when a logged-out user tries to view the dashboard.</p>
+                    <p class="kbw-sd-card-note">Choose what happens when a logged-out user tries to view the dashboard.</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <div class="ldp-field ldp-full-width">
+                <div class="kbw-sd-field-grid">
+                    <div class="kbw-sd-field kbw-sd-full-width">
                         <label for="unauth_action">Action for Logged-Out Users</label>
-                        <select id="unauth_action" name="learndash_premium_dashboard_settings[unauth_action]">
-                            <option value="form" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'form'); ?>>Show
+                        <select id="unauth_action" name="kbw_sd_settings[unauth_action]">
+                            <option value="form" <?php selected($kbw_sd_settings['unauth_action'] ?? 'form', 'form'); ?>>Show
                                 Login Form in Dashboard</option>
-                            <option value="page" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'page'); ?>>
+                            <option value="page" <?php selected($kbw_sd_settings['unauth_action'] ?? 'form', 'page'); ?>>
                                 Select a Page</option>
-                            <option value="url" <?php selected($learndash_premium_dashboard_settings['unauth_action'] ?? 'form', 'url'); ?>>
+                            <option value="url" <?php selected($kbw_sd_settings['unauth_action'] ?? 'form', 'url'); ?>>
                                 Redirect to Custom URL</option>
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['unauth_action'] ?? 'form') !== 'page') ? 'ldp-hidden' : ''; ?>"
+                    <div class="kbw-sd-field kbw-sd-full-width <?php echo esc_attr( ( ( $kbw_sd_settings['unauth_action'] ?? 'form' ) !== 'page' ) ? 'kbw-sd-hidden' : '' ); ?>"
                         id="wrap_unauth_page">
                         <label>Select Login Page</label>
                         <?php
                         wp_dropdown_pages(array(
-                            'name' => 'learndash_premium_dashboard_settings[unauth_redirect_page]',
+                            'name' => 'kbw_sd_settings[unauth_redirect_page]',
                             'show_option_none' => '-- Select a Page --',
                             'option_none_value' => '',
-                            'selected' => $learndash_premium_dashboard_settings['unauth_redirect_page'] ?? ''
+                            'selected' => esc_attr($kbw_sd_settings['unauth_redirect_page'] ?? '')
                         ));
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['unauth_action'] ?? 'form') !== 'url') ? 'ldp-hidden' : ''; ?>"
+                    <div class="kbw-sd-field kbw-sd-full-width <?php echo esc_attr( ( ( $kbw_sd_settings['unauth_action'] ?? 'form' ) !== 'url' ) ? 'kbw-sd-hidden' : '' ); ?>"
                         id="wrap_unauth_url">
                         <label for="unauth_redirect_url">Custom Redirect URL</label>
                         <input type="url" id="unauth_redirect_url"
-                            name="learndash_premium_dashboard_settings[unauth_redirect_url]"
-                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['unauth_redirect_url'] ?? ''); ?>"
+                            name="kbw_sd_settings[unauth_redirect_url]"
+                            value="<?php echo esc_attr($kbw_sd_settings['unauth_redirect_url'] ?? ''); ?>"
                             placeholder="https://yoursite.com/login" />
                     </div>
                 </div>
             </section>
 
-            <section class="ldp-admin-card ldp-mt-20">
-                <div class="ldp-card-head">
+            <section class="kbw-sd-admin-card kbw-sd-mt-20">
+                <div class="kbw-sd-card-head">
                     <h2>Registration Link</h2>
-                    <p class="ldp-card-note">If "Anyone can register" is enabled in WordPress, where should the "Create
+                    <p class="kbw-sd-card-note">If "Anyone can register" is enabled in WordPress, where should the "Create
                         one" link point?</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <div class="ldp-field ldp-full-width">
+                <div class="kbw-sd-field-grid">
+                    <div class="kbw-sd-field kbw-sd-full-width">
                         <label for="register_link_type">Registration Page Location</label>
-                        <select id="register_link_type" name="learndash_premium_dashboard_settings[register_link_type]">
-                            <option value="default" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'default'); ?>>Default WP Registration Page</option>
-                            <option value="page" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'page'); ?>>Select a Page</option>
-                            <option value="url" <?php selected($learndash_premium_dashboard_settings['register_link_type'] ?? 'default', 'url'); ?>>
+                        <select id="register_link_type" name="kbw_sd_settings[register_link_type]">
+                            <option value="default" <?php selected($kbw_sd_settings['register_link_type'] ?? 'default', 'default'); ?>>Default WP Registration Page</option>
+                            <option value="page" <?php selected($kbw_sd_settings['register_link_type'] ?? 'default', 'page'); ?>>Select a Page</option>
+                            <option value="url" <?php selected($kbw_sd_settings['register_link_type'] ?? 'default', 'url'); ?>>
                                 Custom URL</option>
                         </select>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['register_link_type'] ?? 'default') !== 'page') ? 'ldp-hidden' : ''; ?>"
+                    <div class="kbw-sd-field kbw-sd-full-width <?php echo esc_attr( ( ( $kbw_sd_settings['register_link_type'] ?? 'default' ) !== 'page' ) ? 'kbw-sd-hidden' : '' ); ?>"
                         id="wrap_register_page">
                         <label>Select Registration Page</label>
                         <?php
                         wp_dropdown_pages(array(
-                            'name' => 'learndash_premium_dashboard_settings[register_redirect_page]',
+                            'name' => 'kbw_sd_settings[register_redirect_page]',
                             'show_option_none' => '-- Select a Page --',
                             'option_none_value' => '',
-                            'selected' => $learndash_premium_dashboard_settings['register_redirect_page'] ?? ''
+                            'selected' => esc_attr($kbw_sd_settings['register_redirect_page'] ?? '')
                         ));
                         ?>
                     </div>
 
-                    <div class="ldp-field ldp-full-width <?php echo (($learndash_premium_dashboard_settings['register_link_type'] ?? 'default') !== 'url') ? 'ldp-hidden' : ''; ?>"
+                    <div class="kbw-sd-field kbw-sd-full-width <?php echo esc_attr( ( ( $kbw_sd_settings['register_link_type'] ?? 'default' ) !== 'url' ) ? 'kbw-sd-hidden' : '' ); ?>"
                         id="wrap_register_url">
                         <label for="register_redirect_url">Custom Registration URL</label>
                         <input type="url" id="register_redirect_url"
-                            name="learndash_premium_dashboard_settings[register_redirect_url]"
-                            value="<?php echo esc_attr($learndash_premium_dashboard_settings['register_redirect_url'] ?? ''); ?>"
+                            name="kbw_sd_settings[register_redirect_url]"
+                            value="<?php echo esc_attr($kbw_sd_settings['register_redirect_url'] ?? ''); ?>"
                             placeholder="https://yoursite.com/register" />
                     </div>
                 </div>
             </section>
 
-            <section class="ldp-admin-card ldp-mt-20">
-                <div class="ldp-card-head">
+            <section class="kbw-sd-admin-card kbw-sd-mt-20">
+                <div class="kbw-sd-card-head">
                     <h2>Logout Redirection</h2>
-                    <p class="ldp-card-note">Redirect users to a specific page or URL after logging out.</p>
+                    <p class="kbw-sd-card-note">Redirect users to a specific page or URL after logging out.</p>
                 </div>
-                <div class="ldp-field-grid">
-                    <label class="ldp-switch ldp-full-width">
+                <div class="kbw-sd-field-grid">
+                    <label class="kbw-sd-switch kbw-sd-full-width">
                         <input type="checkbox" id="toggle_logout_redirect"
-                            name="learndash_premium_dashboard_settings[logout_redirection]" value="1" <?php checked($learndash_premium_dashboard_settings['logout_redirection'] ?? '0', '1'); ?>>
+                            name="kbw_sd_settings[logout_redirection]" value="1" <?php checked($kbw_sd_settings['logout_redirection'] ?? '0', '1'); ?>>
                         <span>Enable Logout Redirection</span>
                     </label>
 
                     <div id="logout_redirect_options"
-                        class="ldp-conditional-options <?php echo empty($learndash_premium_dashboard_settings['logout_redirection']) ? 'ldp-hidden' : ''; ?>">
-                        <div class="ldp-field">
+                        class="kbw-sd-conditional-options <?php echo esc_attr( empty($kbw_sd_settings['logout_redirection']) ? 'kbw-sd-hidden' : '' ); ?>">
+                        <div class="kbw-sd-field">
                             <label>Redirect Type</label>
                             <select id="logout_redirect_type"
-                                name="learndash_premium_dashboard_settings[logout_redirect_type]">
-                                <option value="page" <?php selected($learndash_premium_dashboard_settings['logout_redirect_type'] ?? 'page', 'page'); ?>>Select an existing page</option>
-                                <option value="url" <?php selected($learndash_premium_dashboard_settings['logout_redirect_type'] ?? 'page', 'url'); ?>>Custom URL</option>
+                                name="kbw_sd_settings[logout_redirect_type]">
+                                <option value="page" <?php selected($kbw_sd_settings['logout_redirect_type'] ?? 'page', 'page'); ?>>Select an existing page</option>
+                                <option value="url" <?php selected($kbw_sd_settings['logout_redirect_type'] ?? 'page', 'url'); ?>>Custom URL</option>
                             </select>
                         </div>
 
-                        <div class="ldp-field" id="wrap_redirect_page">
+                        <div class="kbw-sd-field" id="wrap_redirect_page">
                             <label>Select Page</label>
                             <?php
                             wp_dropdown_pages(array(
-                                'name' => 'learndash_premium_dashboard_settings[logout_redirect_page]',
+                                'name' => 'kbw_sd_settings[logout_redirect_page]',
                                 'show_option_none' => '-- Select a Page --',
                                 'option_none_value' => '',
-                                'selected' => $learndash_premium_dashboard_settings['logout_redirect_page'] ?? ''
+                                'selected' => esc_attr($kbw_sd_settings['logout_redirect_page'] ?? '')
                             ));
                             ?>
                         </div>
 
-                        <div class="ldp-field" id="wrap_redirect_url">
+                        <div class="kbw-sd-field" id="wrap_redirect_url">
                             <label>Custom URL</label>
-                            <input type="url" name="learndash_premium_dashboard_settings[logout_redirect_url]"
-                                value="<?php echo esc_attr($learndash_premium_dashboard_settings['logout_redirect_url'] ?? ''); ?>"
+                            <input type="url" name="kbw_sd_settings[logout_redirect_url]"
+                                value="<?php echo esc_attr($kbw_sd_settings['logout_redirect_url'] ?? ''); ?>"
                                 placeholder="https://..." />
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <div id="tab-shortcode" class="ldp-tab-content">
-            <section class="ldp-admin-card">
-                <div class="ldp-card-head">
+        <div id="tab-shortcode" class="kbw-sd-tab-content">
+            <section class="kbw-sd-admin-card">
+                <div class="kbw-sd-card-head">
                     <h2>Dashboard Shortcode</h2>
-                    <p class="ldp-card-note">Copy and paste this shortcode onto any WordPress page to render the premium
+                    <p class="kbw-sd-card-note">Copy and paste this shortcode onto any WordPress page to render the premium
                         dashboard.</p>
-                    <p class="ldp-card-note"><strong>Pro Tips:</strong> Use Elementor Canvas Page template to have best output. Or Try full screen mode. Without any Header & Footer and 100% width.</p>
+                    <p class="kbw-sd-card-note"><strong>Pro Tips:</strong> Use Elementor Canvas Page template to have best output. Or Try full screen mode. Without any Header & Footer and 100% width.</p>
                 </div>
 
                 <div
                     style="background: #f9fafb; padding: 24px; border-radius: 8px; border: 2px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-                    <code id="ldp_shortcode_text"
-                        style="font-size: 20px; font-weight: 700; color: #4f46e5; background: none; padding: 0;">[learndash_premium_dashboard]</code>
-                    <button type="button" class="button button-primary" id="ldp_copy_shortcode_btn"
+                    <code id="kbw_sd_shortcode_text"
+                        style="font-size: 20px; font-weight: 700; color: #4f46e5; background: none; padding: 0;">[kibworks_student_dashboard]</code>
+                    <button type="button" class="button button-primary" id="kbw_sd_copy_shortcode_btn"
                         style="display: flex; align-items: center; gap: 8px;">
                         <span class="dashicons dashicons-clipboard"></span> Copy Shortcode
                     </button>
                 </div>
-                <p id="ldp_copy_success"
+                <p id="kbw_sd_copy_success"
                     style="color: #059669; font-weight: 600; display: none; margin-top: 10px; text-align: right;">
                     Shortcode copied to clipboard!</p>
             </section>
         </div>
 
-        <div id="tab-instructions" class="ldp-tab-content">
-            <section class="ldp-admin-card">
-                <div class="ldp-card-head">
+        <div id="tab-instructions" class="kbw-sd-tab-content">
+            <section class="kbw-sd-admin-card">
+                <div class="kbw-sd-card-head">
                     <h2>How to Use This Plugin</h2>
-                    <p class="ldp-card-note">A quick guide to setting up and managing your LearnDash Premium Dashboard.
+                    <p class="kbw-sd-card-note">A quick guide to setting up and managing your LearnDash Premium Dashboard.
                     </p>
                 </div>
 
                 <div style="line-height: 1.6; color: #374151;">
                     <h3 style="margin-top: 0;">1. Displaying the Dashboard</h3>
                     <p>To display the dashboard to your students, simply create a new WordPress Page (e.g., "Student
-                        Portal") and paste the shortcode <code>[learndash_premium_dashboard]</code> into the content
+                        Portal") and paste the shortcode <code>[kibworks_student_dashboard]</code> into the content
                         area. The dashboard will automatically handle the routing for courses, certificates, and profile
                         settings.</p>
 
@@ -359,7 +360,7 @@ $learndash_premium_dashboard_available_fonts = array('Inter', 'Outfit', 'Poppins
             </section>
         </div>
 
-        <div class="ldp-admin-footer">
+        <div class="kbw-sd-admin-footer">
             <?php submit_button('Save Settings', 'primary', 'submit', false); ?>
         </div>
     </form>

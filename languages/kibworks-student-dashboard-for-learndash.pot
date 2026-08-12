@@ -1,0 +1,282 @@
+# Copyright (C) 2026 Shakib Shown
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kibworks Student Dashboard for LearnDash 1.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/shakib6472/kibworks-student-dashboard-for-learndash/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: kibworks-student-dashboard-for-learndash\n"
+
+#. translators: 1: Number of completed steps, 2: Total number of steps
+#: includes/courses.php:99
+msgid "%1$s of %2$s Steps Completed"
+msgstr ""
+
+#. translators: %s: Percentage of course completed
+#: includes/courses.php:110
+#: includes/dashboard.php:123
+msgid "%s%% complete"
+msgstr ""
+
+#: includes/login-prompt.php:26
+msgid "Access Restricted"
+msgstr ""
+
+#: includes/dashboard.php:79
+msgid "Avg. Completion Rate"
+msgstr ""
+
+#: includes/certificates.php:65
+msgid "Certificate Earned!"
+msgstr ""
+
+#: includes/nav.php:68
+msgid "Certificates"
+msgstr ""
+
+#: includes/dashboard.php:75
+msgid "Certificates Earned"
+msgstr ""
+
+#: includes/profile.php:80
+msgid "Change Password"
+msgstr ""
+
+#: includes/certificates.php:67
+msgid "Complete the course to unlock this certificate."
+msgstr ""
+
+#: includes/courses.php:84
+msgid "Completed"
+msgstr ""
+
+#: includes/profile.php:97
+msgid "Confirm New Password"
+msgstr ""
+
+#: includes/courses.php:87
+msgid "Continue"
+msgstr ""
+
+#: includes/certificates.php:83
+msgid "Continue Course"
+msgstr ""
+
+#: includes/dashboard.php:86
+msgid "Continue Learning"
+msgstr ""
+
+#: includes/login-prompt.php:46
+msgid "Create one"
+msgstr ""
+
+#: includes/profile.php:89
+msgid "Current Password"
+msgstr ""
+
+#: includes/header.php:26
+#: includes/nav.php:49
+msgid "Dashboard"
+msgstr ""
+
+#: includes/login-prompt.php:46
+msgid "Don't have an account?"
+msgstr ""
+
+#: includes/courses.php:82
+msgid "Download Certificate"
+msgstr ""
+
+#: includes/certificates.php:79
+msgid "Download PDF"
+msgstr ""
+
+#: includes/profile.php:68
+msgid "Email"
+msgstr ""
+
+#: includes/dashboard.php:159
+msgid "Enrolled"
+msgstr ""
+
+#: includes/dashboard.php:67
+msgid "Enrolled Courses"
+msgstr ""
+
+#: includes/profile.php:60
+msgid "First Name"
+msgstr ""
+
+#: includes/dashboard.php:62
+msgid "Here is your training progress overview."
+msgstr ""
+
+#: includes/profile.php:64
+msgid "Last Name"
+msgstr ""
+
+#: includes/classes/class-dashboard-core.php:170
+msgid "LearnDash LMS must be installed and activated to use this dashboard."
+msgstr ""
+
+#: includes/nav.php:89
+msgid "Logout"
+msgstr ""
+
+#: includes/certificates.php:24
+#: includes/header.php:22
+msgid "My Certificates"
+msgstr ""
+
+#: includes/courses.php:28
+#: includes/header.php:20
+#: includes/nav.php:58
+msgid "My Courses"
+msgstr ""
+
+#: includes/profile.php:93
+msgid "New Password"
+msgstr ""
+
+#: includes/certificates.php:94
+msgid "No certificates available. Enroll in a course that offers a certificate to see them here."
+msgstr ""
+
+#: includes/dashboard.php:165
+msgid "No recent activity."
+msgstr ""
+
+#: includes/login-prompt.php:35
+msgid "Password"
+msgstr ""
+
+#: includes/profile.php:23
+msgid "Password updated successfully."
+msgstr ""
+
+#: includes/profile.php:31
+msgid "Passwords may not contain the backslash character."
+msgstr ""
+
+#: includes/profile.php:72
+msgid "Phone"
+msgstr ""
+
+#: includes/profile.php:27
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/profile.php:28
+msgid "Please fill out all password fields."
+msgstr ""
+
+#: includes/login-prompt.php:27
+msgid "Please sign in to access your dashboard."
+msgstr ""
+
+#: includes/nav.php:78
+msgid "Profile"
+msgstr ""
+
+#: includes/header.php:24
+#: includes/profile.php:51
+msgid "Profile Settings"
+msgstr ""
+
+#: includes/profile.php:22
+msgid "Profile information updated successfully."
+msgstr ""
+
+#: includes/dashboard.php:144
+msgid "Recent Enrollments"
+msgstr ""
+
+#: includes/login-prompt.php:36
+msgid "Remember Me"
+msgstr ""
+
+#: includes/dashboard.php:128
+msgid "Resume"
+msgstr ""
+
+#: includes/profile.php:76
+msgid "Save Changes"
+msgstr ""
+
+#: includes/profile.php:24
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: includes/login-prompt.php:37
+msgid "Sign In"
+msgstr ""
+
+#: includes/courses.php:76
+msgid "Start Course"
+msgstr ""
+
+#: includes/dashboard.php:71
+msgid "Steps Completed"
+msgstr ""
+
+#: includes/classes/class-admin.php:36
+msgid "Student Dashboard"
+msgstr ""
+
+#: includes/classes/class-admin.php:35
+msgid "Student Dashboard Settings"
+msgstr ""
+
+#: includes/profile.php:26
+msgid "That email address is already used by another account."
+msgstr ""
+
+#: includes/courses.php:29
+msgid "Track your enrolled training programs."
+msgstr ""
+
+#: includes/profile.php:101
+msgid "Update Password"
+msgstr ""
+
+#: includes/login-prompt.php:34
+msgid "Username or Email"
+msgstr ""
+
+#: includes/dashboard.php:87
+msgid "View All"
+msgstr ""
+
+#: includes/certificates.php:25
+msgid "View and download certificates from your enrolled courses."
+msgstr ""
+
+#. translators: %s: User's first name
+#: includes/dashboard.php:59
+msgid "Welcome back, %s"
+msgstr ""
+
+#: includes/courses.php:127
+msgid "You are not currently enrolled in any courses."
+msgstr ""
+
+#: includes/dashboard.php:137
+msgid "You don't have any courses in progress right now."
+msgstr ""
+
+#: includes/profile.php:30
+msgid "Your current password is incorrect."
+msgstr ""
+
+#: includes/profile.php:29
+msgid "Your new passwords do not match."
+msgstr ""
+
+#: includes/profile.php:25
+msgid "Your profile could not be updated. Please try again."
+msgstr ""

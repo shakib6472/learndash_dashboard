@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Course">
+	<rect width="300" height="200" fill="#e5e7eb"/>
+	<g fill="none" stroke="#9ca3af" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M108 72h84a8 8 0 0 1 8 8v48a8 8 0 0 1-8 8h-84a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8z"/>
+		<path d="M150 72v64"/>
+		<path d="M118 92h20M118 108h20M162 92h20M162 108h20"/>
+	</g>
+</svg>

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.getElementById('ldp-sidebar');
-    const menuBtn = document.getElementById('ldp-menu-btn');
-    const closeBtn = document.getElementById('ldp-close-btn');
+    const sidebar = document.getElementById('kbw-sd-sidebar');
+    const menuBtn = document.getElementById('kbw-sd-menu-btn');
+    const closeBtn = document.getElementById('kbw-sd-close-btn');
     const overlay = document.getElementById('overlay');
 
     if (!sidebar || !menuBtn || !closeBtn || !overlay) return;
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Course View Toggle Logic (Grid/List)
-    const courseListContainer = document.getElementById('ldp-course-list-container');
-    const viewBtns = document.querySelectorAll('.ldp-view-btn');
+    const courseListContainer = document.getElementById('kbw-sd-course-list-container');
+    const viewBtns = document.querySelectorAll('.kbw-sd-view-btn');
 
     if (courseListContainer && viewBtns.length > 0) {
 
         // Load preference from local storage (so it remembers their choice)
-        const savedView = localStorage.getItem('ldp_course_view') || 'list';
+        const savedView = localStorage.getItem('kbw_sd_course_view') || 'list';
         if (savedView === 'grid') {
             courseListContainer.classList.add('grid-3');
             document.querySelector('[data-view="list"]').classList.remove('active');
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Update layout class and save preference
                 if (this.dataset.view === 'grid') {
                     courseListContainer.classList.add('grid-3');
-                    localStorage.setItem('ldp_course_view', 'grid');
+                    localStorage.setItem('kbw_sd_course_view', 'grid');
                 } else {
                     courseListContainer.classList.remove('grid-3');
-                    localStorage.setItem('ldp_course_view', 'list');
+                    localStorage.setItem('kbw_sd_course_view', 'list');
                 }
             });
         });
